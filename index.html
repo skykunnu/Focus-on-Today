@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Focus-on-Today</title>
-    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <main>
+        <h1 class="title">Focus on <span>Today</span></h1>
+        <div class="container">
+          <h2 class="subtitle"><span>Today</span><img src="./Sun.jpg" alt="sun"></h2>
+          <p class="paragraph">Raise the bar by completing your goals!</p>
+          <!-- <progress class="progress-bar" value="32" max="100"> 32% </progress> This is a inbuilt tag in html for checking of progress. -->
+          <!-- Below is the custom made progress bar -->
+          <div class="progress-bar">
+             <div class="progress-value">2/3 Completed</div>
+          </div>
+          <p class="paragraph1">Please set all the 3 goals.</p>
+          <div class="goal-1">
+            <div class="custom-checkbox"></div>
+            <input class="goal-input"  type="text" placeholder="Add new goal">
+          </div>
+          <div class="goal-1">
+            <div class="custom-checkbox"></div>
+            <input class="goal-input"  type="text" placeholder="Add new goal">
+          </div>
+          <div class="goal-1">
+            <div class="custom-checkbox"></div>
+            <input class="goal-input"  type="text" placeholder="Add new goal">
+          </div>
+          <p class="paragraph2">"Move one step ahead, today!"</p>
+         <p class="paragraph3">Made with ❤️ by Shikhar khandelwal</p>
+        </div>
+    </main>
 </body>
 </html>
