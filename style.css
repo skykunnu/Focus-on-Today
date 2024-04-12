@@ -87,6 +87,11 @@ padding-left: 10px;
     cursor: pointer;
 }
 
+.completed .custom-checkbox{
+    background: #48A300;
+    border-color: #48A300;
+}
+
 .goal-input{
     border: none;
     font-family: inherit;
