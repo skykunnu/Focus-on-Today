@@ -60,6 +60,7 @@ display: flex;
 align-items: center;
 padding-left: 10px;
 }
+
 .error-label{
     color: rgba(255, 81, 81, 1);
     font-size: 13px;
@@ -96,7 +97,7 @@ padding-left: 10px;
     font-weight: 500;
     font-size: 16px;
     outline: none; /* After doing border none, as we click on input text black-outline occur, so to remove it we used this property.*/
-    flex-grow: 1;  /* Increase the input field size upto the border. */
+    /* flex-grow: 1;  Increase the input field size upto the border. */
     padding:0px 22px;
     width: 100%; /* it stretches to fill the entire horizontal space available within its container.*/
 }
@@ -125,6 +126,7 @@ padding-left: 10px;
 display: none;
 }
 
+
 /* Below completed classes  will execute when we click on the checkbox.*/
 .completed .custom-checkbox{
     background: #48A300;
@@ -139,6 +141,10 @@ display: none;
     text-decoration: line-through;
     
 }
+.show-error .error-label{
+display: block;
+}
+
 @media (max-width: 768px){
     .title{
      font-size: 32px;
