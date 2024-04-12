@@ -4,7 +4,6 @@ body{
     font-family: 'Poppins',sans-serif; 
     margin: 0;
     box-sizing: border-box;
-
 }
 /* 1rem-16px */
 main{
@@ -70,12 +69,12 @@ padding-left: 10px;
     width: 100%;
     height: 82px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 17px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     padding-left:22px;
     background-color: #FFFFFF;
-    margin-bottom: 46px;
+    margin-bottom: 42px;
     
 }
 .custom-checkbox{
@@ -85,22 +84,20 @@ padding-left: 10px;
     border-radius: 50%;
     flex-shrink: 0; /* It will prevent checkboxes from shrinking on mobile devices */
     cursor: pointer;
-}
-
-.completed .custom-checkbox{
-    background: #48A300;
-    border-color: #48A300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .goal-input{
     border: none;
     font-family: inherit;
+    font-weight: 500;
     font-size: 16px;
     outline: none; /* After doing border none, as we click on input text black-outline occur, so to remove it we used this property.*/
-    /* flex-grow: 1; Increase the input field size upto the border. */
-    padding-left: 22px;
-    align-self: stretch; /* It stretches input text upto whole boundary as soon as you enter, it becomes writeable.*/
-    width: 100%;
+    flex-grow: 1;  /* Increase the input field size upto the border. */
+    padding:0px 22px;
+    width: 100%; /* it stretches to fill the entire horizontal space available within its container.*/
 }
 
 
@@ -123,7 +120,24 @@ padding-left: 10px;
     margin-top: 64px;
 
 }
+.check-icon{
+display: none;
+}
 
+/* Below completed class will execute when we click on the checkbox.*/
+.completed .custom-checkbox{
+    background: #48A300;
+    border-color: #48A300;
+}
+
+.completed .check-icon{
+    display: block;
+}
+.completed .goal-input{
+    color: #48A300;
+    text-decoration: line-through;
+    
+}
 @media (max-width: 768px){
     .title{
      font-size: 32px;
