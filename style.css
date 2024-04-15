@@ -58,12 +58,13 @@ font-size: 15px;
 color: rgba(238, 255, 224, 1);
 display: flex;
 align-items: center;
-overflow: hidden;  /*It is basically used to hide content wrapped in the progress bar.  */ 
-transition: width 1s ease-in-out;
+overflow: hidden; /* It is basically used to hide content wrapped in the progress bar.*/ 
+transition: width 1.5s ease-in-out;
 }
 
 .progress-value span{
-    padding-left: 10px;
+    padding-left: 20px;
+    min-width: max-content;  /* An element to set its minimum width to the width of its content, allowing it to expand horizontally to accommodate its content.*/
 }
 .error-label{
     color: rgba(255, 81, 81, 1);

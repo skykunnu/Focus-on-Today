@@ -9,16 +9,36 @@ const fact=[
     'Raise the bar by completing your goals!',
     'Well begun is half done',
     'Just a step away, Keep going',
+    'Just one step away, Come on',
     'Whoa! You just completed all the goals, time for chill :D',
 ]
 
-const allGoals = JSON.parse(localStorage.getItem("allGoals")) || {}; // fetching data from local storage and also saving the pre-existing data for future use.
+const allGoals = JSON.parse(localStorage.getItem("allGoals")) || { // fetching data from local storage and also saving the pre-existing data for future use.
+    // Earlier we had kept object empty, but when we deleted our local storage data and restart the process again it was throwing an error 
+    // because allGoals object was empty and in empty object we were accessing (.name) property, so to avoid the error we have initilized empty name key.   
+    first:{
+        name:'',
+        completed: false,
+    },
+    second:{
+        name:'',
+        completed: false,
+    },
+    third:{
+        name:'',
+        completed: false,
+    },
+    fourth:{
+        name:'',
+        completed: false,
+    }
+}; 
 let completedGoalsCount=Object.values(allGoals).filter((goal)=>goal.completed).length; // calculating the count of how many completed properties are true.(Object.value is converting values of allGoals object into an array).
-progressValue.style.width= `${completedGoalsCount/3 * 100}%`; // whenever our page gets reload, the progress bar should be display on screen. 
-progressValue.firstElementChild.innerText=`${completedGoalsCount}/3 completed`;
+progressValue.style.width= `${completedGoalsCount/4 * 100}%`; // whenever our page gets reload, the progress bar should be display on screen. 
+progressValue.firstElementChild.innerText=`${completedGoalsCount}/4 completed`;
 Fact.innerText=fact[completedGoalsCount]; // It is changing facts after the completion of each task.
 
-   if( progressValue.firstElementChild.innerText=='3/3 completed'){
+if( progressValue.firstElementChild.innerText=='4/4 completed'){
     progressValue.firstElementChild.innerText=`🥳🥳 Hurray!! You Completed your Daily Task`;
   }
 
@@ -33,14 +53,14 @@ checkBoxList.forEach((checkbox) => {
     if (allGoalsAdded) {
       checkbox.parentElement.classList.toggle("completed"); // toggle means it will add the class if not present and remove it when it is present.
     
-      const inputID = checkbox.nextElementSibling.id; // using nextsibling method we accessed the input element id's and using id we can access the allGoals object.
+      const inputID = checkbox.nextElementSibling.id; // using nextsibling method we can access the input element id's and using id we can access the allGoals object.
       allGoals[inputID].completed=!allGoals[inputID].completed; // if it is true then it becomes false and vice-versa.
       completedGoalsCount=Object.values(allGoals).filter((goal)=>goal.completed).length;
 
-      progressValue.style.width= `${completedGoalsCount/3 * 100}%`; // Counting the percentage completed and using percentage it is increasing and decreasing width. 
-      progressValue.firstElementChild.innerText=`${completedGoalsCount}/3 completed`; // Using firstElementChild we are accessing the span tag of progress value. 
+      progressValue.style.width= `${completedGoalsCount/4 * 100}%`; // Counting the percentage completed and using percentage it is increasing and decreasing width. 
+      progressValue.firstElementChild.innerText=`${completedGoalsCount}/4 completed`; // Using firstElementChild we are accessing the span tag of progress value. 
       Fact.innerText=fact[completedGoalsCount];
-      if( progressValue.firstElementChild.innerText=='3/3 completed'){
+      if( progressValue.firstElementChild.innerText=='4/4 completed'){
         progressValue.firstElementChild.innerText=`🥳🥳 Hurray!! You Completed your Daily Task`;
       }
 
@@ -77,12 +97,8 @@ inputFields.forEach((input) => { // this input callback is pointing to each elem
       }
 
 
-    allGoals[input.id] =
-      // this object has been created to store name and completed property.
-      {
-        name: input.value,
-        completed: false,
-      };
+    allGoals[input.id].name=input.value; // this statement has been made to store input.value into the name property of allGoals object. 
+     
     localStorage.setItem("allGoals", JSON.stringify(allGoals));
   });
 });
