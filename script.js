@@ -66,7 +66,9 @@ checkBoxList.forEach((checkbox) => {
 
       localStorage.setItem("allGoals", JSON.stringify(allGoals)); // to store above statement in the local storage. 
 
-    } else {
+    } 
+    
+    else {
       progressBar.classList.add("show-error"); // As soon as the condition gets false progress-bar will add this class and the show-error class and red text will be displayed.
     }
   });
